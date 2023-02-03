@@ -22,4 +22,19 @@ class DogsController < ApplicationController
     )
     redirect_to "/dogs"
   end
+
+  def edit
+    @dog = dog.find_by(id: params[:id])
+    render :edit
+  end
+
+  def update
+    @dog = Dog.find_by(id: params[:id])
+    @dog.update(
+      name: params[:dog][:name],
+      width: params[:dog][:breed],
+      height: params[:dog][:image],
+    )
+    redirect_to "/dogs"
+  end
 end
