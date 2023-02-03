@@ -6,4 +6,5 @@
   <%= link_to "More Info", photo %>
   <%= link_to "New photo", new_photo_path %>
   <%= link_to "Edit photo", edit_photo_path(@photo) %>
+  <%= link_to "Destroy photo", photo_path(@photo), data: {turbo_method: :delete} %>
 <% end %>

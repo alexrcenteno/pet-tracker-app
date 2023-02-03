@@ -37,4 +37,10 @@ class DogsController < ApplicationController
     )
     redirect_to "/dogs"
   end
+
+  def destroy
+    @dog = Dog.find_by(id: params[:id])
+    @dog.destroy
+    redirect_to "/dogs", status: :see_other
+  end
 end
